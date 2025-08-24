@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Відгуки клієнтів - SafeStay</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">SafeStay</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Головна</a></li> 
+                <li><a href="../Login/login.html"><i class="fas fa-user"></i> Увійти</a></li> 
+                <li><a href="../Reviews/reviews.html" class="active"><i class="fas fa-star"></i> Відгуки</a></li> 
+                <li><a href="../About/index.html"><i class="fas fa-info-circle"></i> Про нас</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="reviews-section">
+            <div class="container">
+                <h1>Відгуки клієнтів</h1>
+                <p class="subtitle">Що говорять наші клієнти про своє перебування</p>
+                
+                <div class="reviews-filter">
+                    <div class="filter-group">
+                        <label for="sort-by">Sort by:</label>
+                        <select id="sort-by">
+                            <option value="newest">Найновіше Перше</option>
+                            <option value="highest">Найвищий бал</option>
+                            <option value="lowest">Найнижчий рейтинг</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="rating-filter">Фільтрувати за рейтингом:</label>
+                        <select id="rating-filter">
+                            <option value="all">All Ratings</option>
+                            <option value="5">5 Зірок</option>
+                            <option value="4">4 Зірок</option>
+                            <option value="3">3 Зірок</option>
+                            <option value="2">2 Зірок</option>
+                            <option value="1">1 Зірка</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">JD</div>
+                            <div class="reviewer-info">
+                                <h3>John Doe</h3>
+                                <div class="review-meta">
+                                    <span class="rating">5.0 <i class="fas fa-star"></i></span>
+                                    <span class="date">Жовтня 15, 2023</span>
+                                    <span class="location">Париж, Франція</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <h4>Чудовий сервіс і гарний готель</h4>
+                            <p>The Grand Luxury Hotel перевершив усі наші очікування. Номер був просторим з дивовижним видом на Ейфелеву вежу. Персонал був неймовірно привітним і корисним протягом усього нашого перебування. Сніданок «шведський стіл» був чудовим з такою великою кількістю варіантів. Ми обов'язково повернемося!</p>
+                        </div>
+                        <div class="review-footer">
+                            <span class="property">Grand Luxury Hotel</span>
+                            <button class="helpful-btn" style="color: rgb(75, 0, 130);">
+                        <i class="far fa-thumbs-up" style="color: rgb(75, 0, 130);"></i> Допоміг. (24)
+                         </button>
+
+                        </div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">АШ</div>
+                            <div class="reviewer-info">
+                                <h3>Alice Smith</h3>
+                                <div class="review-meta">
+                                    <span class="rating">4.5 <i class="fas fa-star"></i></span>
+                                    <span class="date">Вересень 28, 2023</span>
+                                    <span class="location">Рим, Італія</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <h4>Чудове розташування, але маленька кімната</h4>
+                            <p>Готель ідеально розташований поруч з усіма основними визначними пам'ятками Риму. Персонал був дуже люб'язним і допоміг нам з бронюванням столиків у ресторанах. Єдиною наріканням було те, що номер був досить маленьким за ту ціну, яку ми заплатили. Ванна кімната була сучасною, але тісною.</p>
+                        </div>
+                        <div class="review-footer">
+                            <span class="property">Roman Holiday Hotel</span>
+                            <button class="helpful-btn" style="color: rgb(75, 0, 130);">
+                          <i class="far fa-thumbs-up" style="color: rgb(75, 0, 130);"></i> Допоміг. (12)
+                        </button>
+
+                        </div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">RJ</div>
+                            <div class="reviewer-info">
+                                <h3>Robert Johnson</h3>
+                                <div class="review-meta">
+                                    <span class="rating">4.8 <i class="fas fa-star"></i></span>
+                                    <span class="date">Жовтень 10, 2023</span>
+                                    <span class="location">Токіо, Японія</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <h4>Ідеально підходить для бізнес-мандрівників</h4>
+                            <p>Як людина, яка часто подорожує у справах, я високо ціную ефективне обслуговування та чудові зручності. Особливо вразив представницький лаунж з чудовим видом на місто. Місце розташування зручне для проведення зустрічей в центрі Токіо. Обслуговування номерів було швидким, а якість їжі - відмінною.</p>
+                        </div>
+                        <div class="review-footer">
+                            <span class="property">Tokyo Tower Suites</span>
+                            <button class="helpful-btn" style="color: rgb(75, 0, 130);">
+                            <i class="far fa-thumbs-up" style="color: rgb(75, 0, 130);"></i> Допоміг. (8)
+                              </button>
+
+                        </div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">ME</div>
+                            <div class="reviewer-info">
+                                <h3>Maria Garcia</h3>
+                                <div class="review-meta">
+                                    <span class="rating">3.2 <i class="fas fa-star"></i></span>
+                                    <span class="date">Липень 22, 2023</span>
+                                    <span class="location">Нью-Йорк, США</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <h4>Враження в середньому</h4>
+                            <p>Готель був чистим і знаходився в хорошому місці, але у нас виникло кілька проблем під час нашого перебування. Кондиціонер у нашому номері не працював належним чином, і знадобилося два звернення, щоб його полагодили. Стіни досить тонкі, тому ми могли чути шум з сусідніх номерів. Хоча ціна була прийнятною для Нью-Йорка.</p>
+                        </div>
+                        <div class="review-footer">
+                            <span class="property">Manhattan View Hotel</span>
+                            <button class="helpful-btn" style="color: rgb(75, 0, 130);">
+                            <i class="far fa-thumbs-up" style="color: rgb(75, 0, 130);"></i> Допоміг. (5)
+                             </button>
+
+                        </div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-avatar">TW</div>
+                            <div class="reviewer-info">
+                                <h3>Thomas Wilson</h3>
+                                <div class="review-meta">
+                                    <span class="rating">5.0 <i class="fas fa-star"></i></span>
+                                    <span class="date">Липень 15, 2023</span>
+                                    <span class="location">Балі, Індонезія</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <h4>Я знайшов рай!</h4>
+                            <p>Цей курорт - справжній рай! Від приголомшливих пейзажних басейнів до приватного пляжу - кожна деталь була досконалою. Персонал ставився до нас як до членів королівської родини, а спа-процедури були божественними. Вілла з видом на океан була простора і красиво оформлена. Варто кожної копійки за цей розкішний досвід.</p>
+                        </div>
+                        <div class="review-footer">
+                            <span class="property">Bali Ocean Resort</span>
+                            <button class="helpful-btn" style="color: rgb(75, 0, 130);">
+                            <i class="far fa-thumbs-up" style="color: rgb(75, 0, 130);"></i> Допоміг. (5)
+                             </button>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn">4</button>
+                    <button class="pagination-btn next">Далі <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>SafeStay</h3>
+                <p>Знайдіть свій ідеальний варіант проживання за найкращими цінами. Понад 1 мільйон готелів, будинків та апартаментів по всьому світу</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Швидкий доступ</h3>
+                <ul>
+                <li><a href="../index.html"><i class="fas fa-home"></i> Головна</a></li> 
+                <li><a href="../Login/login.html"><i class="fas fa-user"></i> Увійти</a></li> 
+                <li><a href="../Reviews/reviews.html" class="active"><i class="fas fa-star"></i> Відгуки</a></li> 
+                <li><a href="../About/index.html"><i class="fas fa-info-circle"></i> Про нас</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Зв'язатися з нами</h3>
+                <p><i class="fas fa-envelope"></i> info@Safestay.com</p>
+                <p><i class="fas fa-phone"></i> +38 (***) ***-****</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 SafeStay. Усі права захищені.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

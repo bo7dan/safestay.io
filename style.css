@@ -1,0 +1,758 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /*background-color: #f5f5f5;*/
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /*  inherit */
+}
+
+a:hover {
+    color: #FF073A;
+}
+
+header {
+    background-color: rgba(0, 255, 0, 0);  /* #66FFB2 */
+    color: #4A4A4A;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4A4A4A;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links a:hover {
+    color: #ff8c00;
+}
+
+.nav-links a.active {
+    color: #4B0082;
+    border-bottom: 2px solid #FF073A;
+    padding-bottom: 0.5rem;
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Styles for mobile menu when active */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        background-color: #fff; /* Or your header background color */
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+        padding: 1rem 0;
+    }
+
+    .nav-links.show-menu { /* Class toggled by JS */
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 2rem; /* Adjust spacing for vertical menu */
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+
+.hero {
+    background: /*linear-gradient(rgba(102, 255, 178, 0.8), rgba(102, 255, 178, 0.8)), */ 
+                url('https://i.gifer.com/66B.gif');
+                /*https://plus.unsplash.com/premium_photo-1672115680958-54438df0ab82?q=80&w=1184&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
+    background-size: cover;
+    background-position: center;
+    color: #4A4A4A;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: rgb(230, 240, 250);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: rgb(230, 240, 250);
+}
+
+.search-box {
+    background-color: rgba(0, 255, 0, 0); 
+    border-radius: 5px;
+    padding: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-tabs {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.tab {
+    background: none;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+.tab.active {
+    background-color: #66FFB2;  
+    color: #4A4A4A;
+}
+
+.tab:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #FFFFFF;
+}
+
+.form-group input, 
+.form-group select {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+.search-btn {
+    grid-column: 1 / -1;
+    background-color: #66FFB2; 
+    color: #4A4A4A;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: end;
+}
+
+.search-btn:hover {
+    background-color: #FF073A; 
+}
+
+.destinations {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.destinations h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #4B0082;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* This shadow might be too strong for the whole grid */
+}
+
+.destination-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    margin-bottom: 0.5rem;
+    color: #4B0082;
+}
+
+.card-content p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.rating {
+    color: #febb02;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.deals {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.deals h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #4B0082;
+}
+
+.deal-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    /* Removed the box-shadow from here, moving it to individual deal-card for consistency */
+}
+
+.deal-card {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Applied shadow here */
+}
+
+.deal-card img {
+    width: 40%;
+    object-fit: cover;
+}
+
+.deal-content {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.deal-content h3 {
+    color: #4B0082;
+    margin-bottom: 0.5rem;
+}
+
+.location {
+    color: #666;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+.discount {
+    background-color: #febb02;
+    color: #003580;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    margin-left: 0.5rem;
+}
+
+.review {
+    color: #666;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.book-btn {
+    background-color: #4B0082;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.book-btn:hover {
+    background-color: #FF073A;
+}
+
+/* --- NEW STYLES FOR SEARCH RESULTS --- */
+.search-results {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    /* Initially hidden by JS */
+}
+
+.search-results h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #4B0082;
+}
+
+.search-results .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Same as .deal-container */
+    gap: 2rem; /* Same as .deal-container */
+    /* If you want a common shadow for the grid, apply it here */
+}
+
+/* The individual hotel cards in search results will use .deal-card styles */
+/* No need for new styles if .deal-card is applied to them */
+
+.search-results .no-results-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* --- END NEW STYLES --- */
+
+
+footer {
+    background-color: rgba(0, 255, 0, 0);
+    color: #4A4A4A;
+    padding: 3rem 0 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #4B0082;
+    border-bottom: 2px solid #FF073A;
+    padding-bottom: 0.5rem; /* Added padding for aesthetic */
+}
+
+.footer-section p {
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a:hover {
+    color: #febb02;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #febb02;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #777; /* Softer color for copyright */
+}
+
+/* --- Media Queries --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 1rem; /* Adjust padding for smaller screens */
+    }
+
+    /* .nav-links rules moved up for better organization */
+    
+    .hero {
+        padding: 3rem 1rem; /* Adjust hero padding */
+    }
+
+    .search-box {
+        padding: 1rem; /* Adjust search box padding */
+    }
+
+    .search-form {
+        grid-template-columns: 1fr; /* Stack form elements vertically */
+    }
+    
+    .destinations, .deals, .search-results, .footer-content {
+        padding: 0 1rem; /* Adjust padding for main sections */
+    }
+
+    .deal-container, .search-results .results-grid { /* Apply to both deal and search results containers */
+        grid-template-columns: 1fr; /* Stack deal cards vertically */
+    }
+    
+    .deal-card, .search-results .deal-card { /* Apply to both deal and search results cards */
+        flex-direction: column;
+    }
+    
+    .deal-card img, .search-results .deal-card img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr; /* Stack footer sections vertically */
+        text-align: center;
+    }
+
+    .footer-section h3 {
+        margin-top: 1.5rem; /* Add spacing between stacked footer sections */
+    }
+
+    .social-icons {
+        justify-content: center; /* Center social icons */
+    }
+}
+
+
+/* --- Login Page Styles (already present, included for completeness) --- */
+.login-container {
+    max-width: 500px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    color: #003580;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.login-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333; /* Ensure label color is visible */
+}
+
+.login-form input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #003580;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #002366;
+}
+
+.login-options {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.login-options p {
+    margin-bottom: 1rem;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.facebook-btn {
+    background-color: #3b5998;
+    color: white;
+}
+
+.google-btn {
+    background-color: #db4437;
+    color: white;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.register-link a {
+    color: #003580;
+    font-weight: 600;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* --- Reviews Page Styles (already present, included for completeness) --- */
+.reviews-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.reviews-container h2 {
+    color: #003580;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.review-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.review-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #003580;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.review-user {
+    flex: 1;
+}
+
+.review-user h4 {
+    color: #003580;
+    margin-bottom: 0.2rem;
+}
+
+.review-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.review-rating {
+    color: #febb02;
+    font-weight: bold;
+}
+
+.review-body h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.review-text {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- About Page Styles (already present, included for completeness) --- */
+.about-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.about-container h2 {
+    color: #003580;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.about-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h3 {
+    color: #003580;
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #003580;
+}
+
+.team-member h4 {
+    color: #003580;
+    margin-bottom: 0.5rem;
+}
+
+.team-member p {
+    color: #666;
+}
+
+/*.hotel1 {
+    color: #db4437;
+} */
