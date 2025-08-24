@@ -48,237 +48,130 @@ header {
 
 .nav-links a {
     font-weight: 500;
-    transition: color 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #4A4A4A;
-}
-
-.nav-links a:hover {
-    color: #febb02;
 }
 
 .nav-links a.active {
     color: #4B0082;
-    border-bottom: 2px solid #FF073A;
-    padding-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.nav-links a:hover {
+    color: #FF073A;
 }
 
 .mobile-menu {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
-
 }
 
+/* Main Content Styles */
 .reviews-section {
-    padding: 3rem 0;
-    background-color: #f5f5f5;
-}
-
-.reviews-section .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 3rem auto;
     padding: 0 2rem;
 }
 
-.reviews-section h1 {
-    color: #4B0082;
+.reviews-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.reviews-header h2 {
+    color: #003580;
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
 
-.reviews-section .subtitle {
+.reviews-header p {
     color: #666;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.reviews-filter {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.filter-group {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.filter-group label {
-    font-weight: 600;
-    color: #333;
-}
-
-.filter-group select {
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-}
-
-.reviews-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .review-card {
     background-color: white;
     border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.review-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.reviewer-avatar {
-    width: 50px;
-    height: 50px;
-    background-color: #4B0082;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-right: 1rem;
-    flex-shrink: 0;
-}
-
-.reviewer-info h3 {
-    color: #4B0082;
-    margin-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .review-meta {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.rating {
-    color: #febb02;
-    font-weight: bold;
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.2rem;
-}
-
-.review-content h4 {
-    color: #333;
-    margin-bottom: 0.8rem;
-    font-size: 1.1rem;
-}
-
-.review-content p {
-    color: #555;
-    line-height: 1.6;
     margin-bottom: 1rem;
 }
 
-.review-footer {
+.review-user-info {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
+}
+
+.review-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+
+.review-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.review-user h4 {
+    color: #003580;
+    margin-bottom: 0.2rem;
+}
+
+.review-date {
+    color: #666;
     font-size: 0.9rem;
 }
 
-.review-footer .property {
-    color: #4B0082;
-    font-weight: 600;
+.review-rating {
+    color: #febb02;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
-.helpful-btn {
-    background: none;
-    border: none;
-    color: #4B0082;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    transition: color 0.3s;
+.review-body h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
 }
 
-.helpful-btn:hover {
-    color: #4B0082;
+.review-text {
+    color: #555;
+    line-height: 1.6;
 }
 
-button.helpful-btn {
-    color: #4B0082 ;
-}
-
-element.style {
-    color: #4B0082;
-}
-
+/* Pagination Styles */
 .pagination {
     display: flex;
     justify-content: center;
-    margin-top: 3rem;
     gap: 0.5rem;
+    margin-top: 2rem;
 }
 
-.pagination-btn {
-    width: 40px;
-    height: 40px;
+.pagination a {
+    display: inline-block;
+    padding: 0.7rem 1.2rem;
     border: 1px solid #ddd;
-    background-color: white;
     border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s;
+    color: #4B0082;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.pagination-btn.active {
+.pagination a.active,
+.pagination a:hover {
     background-color: #4B0082;
     color: white;
-    border-color: #4B0082;
 }
 
-.pagination-btn:not(.active):hover {
-    background-color: #f5f5f5;
-}
-
-button.helpful-btn{
-    color: #4B0082;
-    /*background-color: #4B0082;*/
-    border-color: #4B0082 ;
-}
-
-.pagination-btn.next {
-    width: auto;
-    padding: 0 1rem;
-}
-
-@media (max-width: 768px) {
-    .reviews-filter {
-        flex-direction: column;
-    }
-    
-    .review-footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-}
-
+/* Footer Styles */
 footer {
     background-color: rgba(0, 255, 0, 0);
     color: #4A4A4A;
@@ -337,31 +230,51 @@ footer {
     padding: 1.5rem;
     margin-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #777;
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+
     .nav-links {
         display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+        text-align: center;
     }
-    
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 0.8rem 0;
+    }
+
     .mobile-menu {
         display: block;
     }
-    
-    .search-form {
-        grid-template-columns: 1fr;
+
+    .reviews-section {
+        padding: 0 1rem;
     }
-    
-    .deal-container {
-        grid-template-columns: 1fr;
+
+    .reviews-header h2 {
+        font-size: 2rem;
     }
-    
-    .deal-card {
+
+    .review-meta {
         flex-direction: column;
-    }
-    
-    .deal-card img {
-        width: 100%;
-        height: 200px;
+        align-items: flex-start;
+        gap: 0.5rem;
     }
 }

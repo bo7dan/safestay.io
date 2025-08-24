@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SafeStay - Find Your Perfect Stay</title>
-    <link rel="stylesheet" href="style.css"> 
+    <!-- Шляхи до CSS та Font Awesome коректні -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -15,9 +16,11 @@
             </div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active"><i class="fas fa-home"></i> Головна</a></li>
-                <li><a href="../Safestay my site/Login/login.html"><i class="fas fa-user"></i> Увійти</a></li>
-                <li><a href="../Safestay my site/Reviews/reviews.html"><i class="fas fa-star"></i> Відгуки</a></li>
-                <li><a href="../Safestay my site/About/index.html"><i class="fas fa-info-circle"></i> Про Нас</a></li>
+                <!-- Виправлений шлях: посилання на інші сторінки.
+                     Використовуємо відносний шлях './' для доступу до папки. -->
+                <li><a href="./Login/login.html"><i class="fas fa-user"></i> Увійти</a></li>
+                <li><a href="./Reviews/reviews.html"><i class="fas fa-star"></i> Відгуки</a></li>
+                <li><a href="./About/index.html"><i class="fas fa-info-circle"></i> Про Нас</a></li>
             </ul>
             <div class="mobile-menu">
                 <i class="fas fa-bars"></i>
@@ -30,30 +33,32 @@
             <div class="hero-content">
                 <h1>Знайдіть своє ідеальне місце для відпочинку</h1>
                 <p>Відкрийте для себе дивовижні пропозиції на готелі</p>
-                
+
                 <div class="search-box">
                     <div class="search-tabs">
                         <button class="tab active">Проживання</button>
                     </div>
-                    
+
                     <form class="search-form">
                         <div class="form-group">
-                            <label for="destination"><i class="fas fa-search"></i> Місце призначення</label>
-                            <input type="text" id="destination" placeholder="Куди ви йдете ?">
+                            <!-- Покращений UX: змінили іконку на 'map-marker-alt' для місця призначення -->
+                            <label for="destination"><i class="fas fa-map-marker-alt"></i> Місце призначення</label>
+                            <!-- Додано атрибут name для коректної роботи форми -->
+                            <input type="text" id="destination" name="destination" placeholder="Куди ви йдете ?">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="check-in"><i class="far fa-calendar"></i> Дата заїзду</label>
-                            <input type="date" id="check-in">
+                            <input type="date" id="check-in" name="check-in">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="check-out"><i class="far fa-calendar"></i> Дата виїзду</label>
-                            <input type="date" id="check-out">
+                            <input type="date" id="check-out" name="check-out">
                         </div>
                         <div class="form-group">
                             <label for="guests"><i class="fas fa-user-friends"></i> Гостей</label>
-                            <select id="guests">
+                            <select id="guests" name="guests">
                                 <option value="1">1 Дорослий</option>
                                 <option value="2">2 Дорослих</option>
                                 <option value="3">3 Дорослих</option>
@@ -62,7 +67,7 @@
                         </div>
                         <div class="form-group">
                             <label for="children"><i class="fas fa-child"></i> Дітей</label>
-                           <select id="children">
+                           <select id="children" name="children">
                            <option value="0">0 Дітей</option>
                            <option value="1">1 Дитина</option>
                            <option value="2">2 Дітей</option>
@@ -88,7 +93,7 @@
                         <span class="rating">4.7 <i class="fas fa-star"></i></span>
                     </div>
                 </div>
-                
+
                 <div class="destination-card">
                     <img src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="New York">
                     <div class="card-content">
@@ -97,7 +102,7 @@
                         <span class="rating">4.8 <i class="fas fa-star"></i></span>
                     </div>
                 </div>
-                
+
                 <div class="destination-card">
                     <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Tokyo">
                     <div class="card-content">
@@ -106,7 +111,7 @@
                         <span class="rating">4.6 <i class="fas fa-star"></i></span>
                     </div>
                 </div>
-                
+
                 <div class="destination-card">
                     <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Rome">
                     <div class="card-content">
@@ -124,18 +129,20 @@
                 <div class="deal-card">
                     <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Luxury Hotel">
                     <div class="deal-content">
-                        <h3 class="hotel1"><a href="../Safestay my site/grand luxury hotel/index.html">Grand Luxury Hotel</a></h3>
+                        <!-- Виправлений шлях до сторінки готелю -->
+                        <h3 class="hotel1"><a href="./grand luxury hotel/index.html">Grand Luxury Hotel</a></h3>
                         <p class="location"><i class="fas fa-map-marker-alt"></i> Miami Beach, США</p>
                         <p class="price">$199 <span class="original-price">$299</span> <span class="discount">33% ЗНИЖКА</span></p>
                         <p class="review"><i class="fas fa-star"></i> 4.9 (1,243 Відгуків)</p>
                         <button class="book-btn">Забронюйте зараз</button>
                     </div>
                 </div>
-                
+
                 <div class="deal-card">
                     <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Boutique Hotel">
                     <div class="deal-content">
-                        <h3 class="hotel2"><a href="../Safestay my site/Boutique Resort & Spa/index.html">Boutique Resort & Spa</a></h3>
+                        <!-- Виправлений шлях до сторінки готелю -->
+                        <h3 class="hotel2"><a href="./Boutique Resort & Spa/index.html">Boutique Resort & Spa</a></h3>
                         <p class="location"><i class="fas fa-map-marker-alt"></i> Балі, Індонезія</p>
                         <p class="price">$149 <span class="original-price">$249</span> <span class="discount">40% ЗНИЖКА</span></p>
                         <p class="review"><i class="fas fa-star"></i> 4.8 (892 Відгуків)</p>
@@ -159,17 +166,18 @@
                 <h3>SafeStay</h3>
                 <p>Знайдіть свій ідеальний варіант проживання за найкращими цінами. Понад 1 мільйон готелів, будинків та апартаментів по всьому світу</p>
             </div>
-            
+
             <div class="footer-section">
                 <h3>Швидкий доступ</h3>
                 <ul>
                     <li><a href="index.html">Головна</a></li>
-                    <li><a href="../Safestay my site/Login/login.html">Увійти</a></li>
-                    <li><a href="../Safestay my site/Reviews/reviews.html">Відгуки</a></li>
-                    <li><a href="../Safestay my site/About/index.html">Про Нас</a></li>
+                    <!-- Виправлені шляхи у футері -->
+                    <li><a href="./Login/login.html">Увійти</a></li>
+                    <li><a href="./Reviews/reviews.html">Відгуки</a></li>
+                    <li><a href="./About/index.html">Про Нас</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-section">
                 <h3>Зв'язатися з нами</h3>
                 <p><i class="fas fa-envelope"></i> info@Safestay.com</p>
@@ -181,12 +189,13 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <p>&copy; 2025 SafeStay. Усі права захищені.</p>
         </div>
     </footer>
 
+    <!-- Шлях до скрипта коректний -->
     <script src="script.js"></script>
 </body>
 </html>

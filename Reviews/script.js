@@ -1,19 +1,19 @@
 function initReviewsPage() {
     const sortSelect = document.getElementById('sort-by');
     const filterSelect = document.getElementById('rating-filter');
-    
+
     if (sortSelect) {
         sortSelect.addEventListener('change', function() {
             console.log('Sorting by:', this.value);
         });
     }
-    
+
     if (filterSelect) {
         filterSelect.addEventListener('change', function() {
             console.log('Filtering by rating:', this.value);
         });
     }
-    
+
     const helpfulButtons = document.querySelectorAll('.helpful-btn');
     helpfulButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -23,7 +23,7 @@ function initReviewsPage() {
             this.disabled = true;
         });
     });
-    
+
     const paginationButtons = document.querySelectorAll('.pagination-btn:not(.next)');
     paginationButtons.forEach(button => {
         button.addEventListener('click', function() {

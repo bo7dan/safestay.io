@@ -35,21 +35,23 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    transition: all 0.3s;
+    transition: background-color 0.3s;
 }
 
-.social-login-btn:hover {
-    background-color: #f5f5f5;
-}
-
-.facebook-btn {
-    color: #3b5998;
+.social-login-btn.facebook-btn {
+    background-color: #3b5998;
+    color: white;
     border-color: #3b5998;
 }
 
-.google-btn {
-    color: #db4437;
+.social-login-btn.google-btn {
+    background-color: #db4437;
+    color: white;
     border-color: #db4437;
+}
+
+.social-login-btn:hover {
+    filter: brightness(110%);
 }
 
 .divider {
@@ -102,11 +104,11 @@ body {
     margin-top: 0.5rem;
     font-size: 0.9rem;
     color: #4B0082;
+    transition: color 0.3s;
 }
 
 .forgot-password:hover {
-    text-decoration: underline;
-    color: #FF073A;
+    color: #ff8c00;
 }
 
 .login-btn {
@@ -116,29 +118,27 @@ body {
     color: white;
     border: none;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 1rem;
 }
 
 .login-btn:hover {
-    background-color: #FF073A;
+    background-color: #ff8c00;
 }
 
 .register-link {
     text-align: center;
     margin-top: 1.5rem;
-    color: #666;
 }
 
 .register-link a {
     color: #4B0082;
     font-weight: 600;
+    transition: color 0.3s;
 }
 
 .register-link a:hover {
-    text-decoration: underline;
-    color: #FF073A;
+    color: #ff8c00;
 }
