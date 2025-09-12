@@ -1,0 +1,144 @@
+body {
+    background-image: url('https://images.pexels.com/photos/127673/pexels-photo-127673.jpeg?_gl=1*1lg583r*_ga*MTg2MDc3MTUyMy4xNzUwNTgxNzAx*_ga_8JE65Q40S6*czE3NTA1ODE3MDAkbzEkZzAkdDE3NTA1ODE3MDAkajYwJGwwJGgw');
+}
+
+.login-section {
+    padding: 4rem 0;
+}
+
+.login-container {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    color: #4B0082;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.social-login-btn {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.social-login-btn.facebook-btn {
+    background-color: #3b5998;
+    color: white;
+    border-color: #3b5998;
+}
+
+.social-login-btn.google-btn {
+    background-color: #db4437;
+    color: white;
+    border-color: #db4437;
+}
+
+.social-login-btn:hover {
+    filter: brightness(110%);
+}
+
+.divider {
+    position: relative;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #ddd;
+    z-index: 1;
+}
+
+.divider span {
+    position: relative;
+    z-index: 2;
+    background-color: white;
+    padding: 0 1rem;
+    color: #666;
+}
+
+.login-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #4B0082;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #ff8c00;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #4B0082;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #ff8c00;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.register-link a {
+    color: #4B0082;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.register-link a:hover {
+    color: #ff8c00;
+}
