@@ -1,3 +1,5 @@
+// Виправлення усіх помилок
+
 document.addEventListener('DOMContentLoaded', function() {
 
     const hotelsData = [];
