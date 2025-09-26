@@ -1,0 +1,67 @@
+:root{
+  --cell-size: 32px;
+  --bg: #f3f4f6;
+  --tile: #e6edf3;
+  --tile-dark: #c8d6df;
+  --flag: #e63946;
+  --text: #111;
+  --tile-text: #0b3b52;
+  --ui-gap: 12px;
+}
+*{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;user-select:none}
+html,body{height:100%}
+body{margin:20px;background:var(--bg);color:var(--text);display:flex;align-items:flex-start;justify-content:center}
+.container{width:100%;max-width:900px;padding-bottom:20px}
+h1{margin:0 0 12px;font-size:20px}
+.controls{display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+.controls select,.controls button{padding:6px 8px}
+#status{margin-left:8px;font-weight:600}
+#boardWrap{display:flex;justify-content:center;align-items:center}
+.board{display:grid;gap:4px;background:transparent;transition:width 160ms,height 160ms}
+.cell{
+  width:var(--cell-size);height:var(--cell-size);
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg,var(--tile) 0,var(--tile-dark) 100%);
+  border-radius:4px;font-weight:700;color:var(--tile-text);cursor:pointer;
+  box-shadow:0 1px 0 rgba(255,255,255,0.6) inset,0 1px 2px rgba(0,0,0,0.08);
+  font-size:14px;
+}
+.cell.revealed{
+  background:#fff;border-radius:3px;cursor:default;
+  box-shadow:none;color:var(--tile-text);font-weight:700;
+}
+.cell.flagged{background:linear-gradient(180deg,#fff7f8,#ffdfe2);color:var(--flag)}
+.cell.mine{background:linear-gradient(180deg,#ffebeb,#ffdcdc);color:#a00}
+.hint{font-size:13px;color:#555;margin-top:8px}
+
+/* Dark theme */
+body.dark {
+  --bg: #0b0f12;
+  --tile: #111215;
+  --tile-dark: #1a1f23;
+  --flag: #ff6b6b;
+  --text: #e6eef6;
+  --tile-text: #d7eef6;
+}
+body.dark .cell.revealed { background:#0f1416; color:var(--tile-text); }
+body.dark .cell.flagged { background: linear-gradient(180deg,#2b1112,#3b1b1c); }
+body.dark .cell.mine { background: linear-gradient(180deg,#4b1111,#6b1b1b); color:#ffcfcf; }
+
+/* Fullscreen adjustments: when in fullscreen, make board fill viewport */
+:fullscreen #board, :-webkit-full-screen #board {
+  width: 100vw !important;
+  height: 100vh !important;
+  display: grid;
+  gap: 2px;
+  align-content: center;
+  justify-content: center;
+}
+.fullscreen-board {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  z-index: 9999;
+}

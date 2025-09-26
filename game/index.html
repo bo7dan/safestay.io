@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <title>Minesweeper — Повноекранний режим</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Minesweeper</h1>
+
+    <div class="controls">
+      <label>Рівень:
+        <select id="difficulty">
+          <option value="easy">Легкий</option>
+          <option value="medium" selected>Середній</option>
+          <option value="hard">Важкий</option>
+          <option value="extreme">Екстримальний</option>
+        </select>
+      </label>
+
+      <button id="new">Нова гра</button>
+      <button id="themeToggle">Тема: темна</button>
+      <span id="status"></span>
+    </div>
+
+    <div id="boardWrap">
+      <div id="board" class="board"></div>
+    </div>
+
+    <p class="hint">Лівий клік — відкрити, правий — поставити прапорець, подвійний — chord.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
