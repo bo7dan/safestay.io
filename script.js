@@ -1,3 +1,5 @@
+// test github.dev
+
 document.addEventListener('DOMContentLoaded', function() {
 
     const hotelsData = [];
